@@ -1,0 +1,26 @@
+$sml: ( max: 570px );
+$med: ( max: 680px );
+$lrg: ( max: 750px );
+
+$green: #316347;
+$orange: #ed810c;
+$pink: #f39d8c;
+$red: #ef493d;
+$blue: #cce7ce;
+$tan: #c9962b;
+
+@font-face {
+    font-family: "Eksell";
+    src: url("../../../assets/fonts/EksellDisplay-Large.woff") format("woff"),
+    url("../../../assets/fonts/EksellDisplay-Large.woff2") format("woff2");
+}
+$eksell: "Eksell";
+
+@font-face {
+    font-family: "Apercu";
+    src: url("../../../assets/fonts/apercu-light-pro.woff") format("woff"),
+    url("../../../assets/fonts/apercu-light-pro.woff2") format("woff2");
+}
+$apercu: "Apercu";
+
+$bodyFont: 'Source Code Pro', monospace; // weights: 300, 400
