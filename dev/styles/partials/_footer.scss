@@ -1,0 +1,33 @@
+footer {
+    display: flex;
+    justify-content: flex-start;
+    width: calc(100vw - 64px);
+    height: 50px;
+
+    .socials {
+
+        a {
+            text-decoration: none;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 8px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:hover {
+                border: 1px solid $grey;
+            }
+        }
+
+        i {
+            color: $grey;
+            font-size: 1.4rem;
+        }
+    }
+}

@@ -5,24 +5,112 @@
 	<title>Jessica Del Grande</title>
 	
 	<link rel="stylesheet" href="public/styles/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 	<meta name="viewport" content="initial-scale=1.0" user-scalable="no">
 	<meta charset="utf-8">
-
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap');
-		</style>
-
 </head>
 
 <body>
-	<header>
-		<h1>Jessica Del Grande*</h1>
-		<h2>Web developer. Sun in Aries, moon in Cancer. Never met a bowl of noodles I didn't like.</h2>
-	</header>
-	
+
+	<nav class="navbar">
+		<div class="toggleMenu" aria-label="Click to toggle menu">
+			<span class="bar"></span>
+			<span>
+				<ul>
+					<li class="menuItem">
+						<a href="#" id="aboutItem">about</a>
+					</li>
+					<li class="menuItem">
+						<a href="#" id="portfolioItem">portfolio</a>
+					</li>
+					<li class="menuItem">
+						<a href="#" id="contactItem">contact</a>
+					</li>
+				</ul>
+			</span>
+			<span class="bar"></span>
+		</div>
+	</nav>
+	<div class="viewport">
+		<div class="scroll-container" id="scroll-container">
+			<div class="content">
+				<header>
+					<h1>Jessica Del Grande</h1>
+					<h2 class="subhead">Web developer, cat person, amateur knitter.</br>Never met a bowl of noodles I didn't like.</h2>
+				</header>
+				<main id="main">
+					<!-- show/hide content based on menu selection -->
+					<section class="container">
+
+						<article class="about">
+							<h3 class="articleTitle">About me</h3>
+							<div class="articleContent">
+								<p>
+									Hi! I'm Jessica, a front-end developer with a passion for building fun, friendly, user-focused websites and applications that are highly intuitive and fully accessible.
+								</p>
+								<p>
+									With four years of front-end experience building data-heavy SaaS applications in the fintech sector and more than a decade in freelance development and client-facing roles, I've grown a diverse skillset that supports the kind of linear, organized work that I love.  
+								</p>
+								<p>
+									I enjoy working with data; I'm curious about how to use D3 to enhance data comprehension, and am currently poking around the docs for GraphQL. I'm also deeply passionate about the user experience and human-centered design, and share that passion with students as the lead mentor in the Juno College part-time UX program.
+								</p>
+								<p>
+									When I'm not coding you can find me whispering sweet nothings to my sewing machine, freaking out over mid-century modern architecture, or trying to beat my grandpa at crokinole. My pronouns are she/her.
+								</p>
+							</div>
+						</article>
+
+						<article class="portfolio">
+							<h3 class="articleTitle">Portfolio</h3>
+							<div class="articleContent">
+								<p>Click through to see some neat things that I've designed and built:</p>
+								<ul>
+									<li>
+										<a href="headlines/index.html" aria-label="Go to the Headlines application">Headlines</a>
+										<p>An application that pulls the top headlines from three news APIs. View each one separately or combine them all into one view for a headline extravaganza! Built using HTML, SCSS, and fetch in vanilla JavaScript.</p>
+									</li>
+									<li>
+										<a href="#" aria-label="Go to the What is Everyone Reading application">What is Everyone Reading?</a>
+										<p>The New York Times bestsellers, available by category. Built using HTML, SCSS, JavaScript, jQuery, AJAX, and The New York Times API.</p>
+									</li>
+								</ul>
+							</div>
+						</article>
+
+						<article class="contact">
+							<h3 class="articleTitle">Contact</h3>
+							<div class="articleContent">
+								<p>contact info goes here</p>
+							</div>
+						</article>
+
+					</section>
+				</main>	
+				
+				<footer>
+					<div class="socials">
+						<a aria-label="Go to Jessica's LinkedIn page" target="_blank" href="https://www.linkedin.com/in/jessicadelgrande/">
+							<i aria-hidden="true" class="fab fa-linkedin-in" title="Jessica's LinkedIn profile"></i>
+						</a>
+						<a aria-label="Go to Jessica's GitHub page" target="_blank" href="https://github.com/jessicadelgrande">
+							<i aria-hidden="true" class="fab fa-github" title="Jessica's GitHub profile"></i>
+						</a>
+						<a aria-label="Go to Jessica's Twitter page" target="_blank" href="https://twitter.com/jessdelgrande">
+							<i aria-hidden="true" class="fab fa-twitter" title="Jessica's Twitter page"></i>
+						</a>
+						<a aria-label="Go to Jessica's Medium page" target="_blank" href="https://medium.com/@jessica.delgrande">
+							<i aria-hidden="true" class="fab fa-medium" title="Jessica's Medium page"></i>
+						</a>
+					</div>
+				</footer>
+
+			</div>
+		</div>
+	</div>
 
 	<!-- scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 	<script src="public/scripts/main.js"></script>
 	<!-- end scripts -->
 </body>
