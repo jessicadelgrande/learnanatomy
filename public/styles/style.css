@@ -133,10 +133,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 @font-face {
-  font-family: "Eksell";
-  src: url("../../../assets/fonts/EksellDisplay-Large.woff") format("woff"), url("../../../assets/fonts/EksellDisplay-Large.woff2") format("woff2"); }
-
-@font-face {
   font-family: "Apercu";
   src: url("../../../assets/fonts/apercu-light-pro.woff") format("woff"), url("../../../assets/fonts/apercu-light-pro.woff2") format("woff2"); }
 
@@ -312,56 +308,64 @@ header {
     .content {
       width: 85vw; } }
 
-main .open {
-  display: block; }
-
-main article {
-  display: none; }
-  main article .articleTitle {
-    font-family: "Canela";
-    font-weight: 400;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    color: #292929; }
-  main article .articleContent {
-    max-width: 700px;
-    width: 65vw; }
-    @media only screen and (max-width: 620px) {
-      main article .articleContent {
-        width: 80vw; } }
-    main article .articleContent p {
-      font-family: "Apercu";
-      font-size: 1.1rem;
+main {
+  position: relative; }
+  main .open {
+    display: block; }
+  main article {
+    display: none;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
+    main article .articleTitle {
+      font-family: "Canela";
       font-weight: 400;
-      letter-spacing: 0.3px;
-      line-height: 1.4;
-      color: #292929;
-      margin-top: 4px; }
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: #292929; }
+    main article .articleContent {
+      max-width: 700px;
+      width: 65vw; }
       @media only screen and (max-width: 620px) {
-        main article .articleContent p {
-          font-size: 1rem; } }
-  main article li {
-    list-style: none;
-    position: relative; }
-    main article li a {
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      color: #292929;
-      font-family: "GT Pressura Mono";
-      line-height: 1.6;
-      position: relative;
-      display: inline-block; }
-      main article li a:hover {
-        color: #f16d68; }
-        main article li a:hover:before {
-          content: "*";
-          font-family: "Apercu";
-          margin-left: -20px;
-          margin-right: 10px;
-          position: absolute;
-          top: 1px;
-          font-size: 1.4rem; }
+        main article .articleContent {
+          width: 80vw; } }
+      main article .articleContent p {
+        font-family: "Apercu";
+        font-size: 1.1rem;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        line-height: 1.4;
+        color: #292929;
+        margin-top: 4px; }
+        @media only screen and (max-width: 620px) {
+          main article .articleContent p {
+            font-size: 1rem; } }
+    main article li {
+      list-style: none;
+      position: relative; }
+      main article li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        color: #292929;
+        font-family: "GT Pressura Mono";
+        line-height: 1.6;
+        position: relative;
+        display: inline-block; }
+        main article li a:hover {
+          color: #f16d68; }
+          main article li a:hover:before {
+            content: "*";
+            font-family: "Apercu";
+            margin-left: -20px;
+            margin-right: 10px;
+            position: absolute;
+            top: 1px;
+            font-size: 1.4rem; }
+
+@keyframes reveal {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 footer {
   display: flex;

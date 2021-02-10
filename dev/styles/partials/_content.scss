@@ -12,6 +12,7 @@
 }
 
 main {
+    position: relative;
 
     .open {
         display: block;
@@ -19,6 +20,7 @@ main {
     
     article {
         display: none;
+        animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
 
         .articleTitle {
             font-family: $canela;
@@ -80,5 +82,14 @@ main {
                 }
             }
         } 
+    }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 }
