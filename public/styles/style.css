@@ -133,280 +133,273 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 @font-face {
-  font-family: "Apercu";
-  src: url("../../../assets/fonts/apercu-light-pro.woff") format("woff"), url("../../../assets/fonts/apercu-light-pro.woff2") format("woff2"); }
+  font-family: "HKGrotesk-Bold";
+  src: url("../../../assets/fonts/HKGrotesk-Bold.otf") format("opentype"); }
 
 @font-face {
-  font-family: "Canela";
-  src: url("../../../assets/fonts/Canela-Regular.woff") format("woff"); }
+  font-family: "HKGrotesk-Regular";
+  src: url("../../../assets/fonts/HKGrotesk-Regular.otf") format("opentype"); }
 
-@font-face {
-  font-family: "GT Pressura Mono";
-  src: url("../../../assets/fonts/GT-Pressura-Mono.otf") format("opentype"); }
+svg, path, a, span {
+  transition: all 0.3s ease; }
 
 body {
-  background-color: #f6f0ea;
-  overflow-x: hidden;
-  overflow-y: scroll; }
+  background-color: #e9f7ff;
+  font-family: "HKGrotesk-Regular";
+  color: #0e678e; }
 
-.viewport {
-  overflow: hidden;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; }
+a {
+  color: #333333;
+  text-decoration: none; }
+  a:hover {
+    color: #e4816b; }
 
-.scroll-container {
-  width: 100%;
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  will-change: transform;
-  transform-style: preserve-3d;
-  backface-visibility: hidden; }
-
-.navbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 11; }
-  .navbar .toggleMenu {
-    position: fixed;
-    top: 32px;
-    right: 32px;
-    width: 40px;
-    height: 40px;
-    display: block;
-    cursor: pointer;
-    transition: opacity 0.2s linear; }
-    .navbar .toggleMenu:hover > span {
-      background-color: #f16d68; }
-    .navbar .toggleMenu span {
-      display: block;
-      height: 4px;
-      width: 40px;
-      border-radius: 40px;
-      background-color: #292929;
-      position: absolute;
-      top: 0;
-      right: 0;
-      overflow: hidden;
-      transition: all 0.4s ease; }
-      .navbar .toggleMenu span:nth-child(1) {
-        z-index: 9; }
-      .navbar .toggleMenu span:nth-child(2) {
-        margin-top: 12px; }
-      .navbar .toggleMenu span:nth-child(3) {
-        margin-top: 24px; }
-    .navbar .toggleMenu ul {
-      position: absolute;
-      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      height: 0;
-      width: 0;
-      right: 0;
-      top: 0;
-      background-color: rgba(0, 53, 47, 0.54);
-      border-radius: 50%;
-      z-index: 18;
-      overflow: hidden;
-      text-align: right; }
-      .navbar .toggleMenu ul .menuItem {
-        font-family: "Apercu";
-        display: block;
-        height: auto;
-        text-transform: uppercase;
-        line-height: 1.6;
-        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        position: relative; }
-        .navbar .toggleMenu ul .menuItem a {
-          color: #cce7ce;
-          font-size: 1.1rem;
-          width: 100%;
-          text-align: right;
-          margin: 8px 0;
-          text-decoration: none;
-          position: relative; }
-          .navbar .toggleMenu ul .menuItem a:hover {
-            color: #f3f1e2; }
-            .navbar .toggleMenu ul .menuItem a:hover:before {
-              content: "*";
-              font-size: 1.4rem;
-              position: absolute;
-              left: -16px; }
-        .navbar .toggleMenu ul .menuItem:first-child {
-          margin-top: 186px; }
-    .navbar .toggleMenu.opened span:nth-child(1) {
-      transform: rotate(45deg) translateY(12px) translateX(12px);
-      z-index: 100;
-      top: -7px; }
-    .navbar .toggleMenu.opened span:nth-child(2) {
-      height: 400px;
-      width: 400px;
-      right: -160px;
-      top: -160px;
-      border-radius: 50%;
-      background-color: rgba(0, 53, 47, 0.54);
-      overflow: visible; }
-    .navbar .toggleMenu.opened span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-10px) translateX(10px);
-      z-index: 100; }
-    .navbar .toggleMenu.opened ul {
-      opacity: 1;
-      height: 400px;
-      width: 400px; }
-      .navbar .toggleMenu.opened ul .menuItem {
-        margin-right: 168px; }
-
-header {
-  padding: 32px 0; }
-  header h1 {
-    font-family: "Canela";
-    font-weight: 400;
-    font-size: 5.5rem;
-    letter-spacing: 2px;
-    color: #292929;
-    margin: 20vh 0 16px 0; }
-    @media only screen and (max-width: 1300px) {
-      header h1 {
-        font-size: 7vw; } }
-    @media only screen and (max-width: 900px) {
-      header h1 {
-        width: 85vw; } }
-    @media only screen and (max-width: 620px) {
-      header h1 {
-        font-size: 3rem; } }
-  header .subhead {
-    font-family: "GT Pressura Mono";
-    font-weight: 300;
-    font-size: 1.4rem;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
-    color: #f16d68;
-    max-width: 700px;
-    margin: 4px; }
-    @media only screen and (max-width: 860px) {
-      header .subhead {
-        font-size: 1.2rem; } }
-    @media only screen and (max-width: 620px) {
-      header .subhead {
-        font-size: 1.1rem; } }
-
-.content {
-  width: 65vw;
-  padding-top: 48px; }
-  @media only screen and (max-width: 620px) {
-    .content {
-      width: 75vw; } }
-  @media only screen and (max-width: 550px) {
-    .content {
-      width: 85vw; } }
-
-main {
-  position: relative; }
-  main .open {
-    display: block; }
-  main article {
-    display: none;
-    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
-    main article .articleTitle {
-      font-family: "Canela";
-      font-weight: 400;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-      color: #292929; }
-    main article .articleContent {
-      max-width: 700px;
-      width: 65vw; }
-      @media only screen and (max-width: 620px) {
-        main article .articleContent {
-          width: 80vw; } }
-      main article .articleContent p {
-        font-family: "Apercu";
-        font-size: 1.1rem;
-        font-weight: 400;
-        letter-spacing: 0.3px;
-        line-height: 1.4;
-        color: #292929;
-        margin-top: 4px; }
-        @media only screen and (max-width: 620px) {
-          main article .articleContent p {
-            font-size: 1rem; } }
-    main article li {
+nav {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  height: 100px;
+  font-family: "HKGrotesk-Bold"; }
+  nav .navContainer {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; }
+  nav #svgLogo {
+    width: 130px; }
+  nav .navLeft {
+    width: 40%;
+    text-align: left; }
+    nav .navLeft #quizMenu {
       list-style: none;
       position: relative; }
-      main article li a {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1.1rem;
-        color: #292929;
-        font-family: "GT Pressura Mono";
-        line-height: 1.6;
+      nav .navLeft #quizMenu ul {
+        display: none;
+        position: absolute;
+        top: 70%;
+        left: 25%;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 1px 0 #ccc;
+        margin: 0;
+        padding: 15px 0 0 0; }
+      nav .navLeft #quizMenu li {
         position: relative;
-        display: inline-block; }
-        main article li a:hover {
-          color: #f16d68; }
-          main article li a:hover:before {
-            content: "*";
-            font-family: "Apercu";
-            margin-left: -20px;
-            margin-right: 10px;
-            position: absolute;
-            top: 1px;
-            font-size: 1.4rem; }
+        margin: 0;
+        padding: 0; }
+        nav .navLeft #quizMenu li a {
+          display: block;
+          padding: 8px;
+          margin: 0 0 0 6px;
+          font-size: 1rem;
+          font-family: "HKGrotesk-Regular"; }
+      nav .navLeft #quizMenu:hover > ul {
+        display: block; }
+  nav .logo {
+    width: 20%;
+    text-align: center; }
+  nav .navRight {
+    width: 40%;
+    text-align: right; }
+  nav ul {
+    padding: 0;
+    margin-top: 25px;
+    list-style-type: none; }
+    nav ul li {
+      padding: 15%;
+      display: inline; }
+      nav ul li a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #0e678e; }
+        nav ul li a:hover {
+          color: #e4816b; }
 
-@keyframes reveal {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+.contentWrapper {
+  height: calc(100vh - 150px);
+  padding: 0 32px; }
+  .contentWrapper main {
+    display: flex;
+    height: 100%; }
+    .contentWrapper main .muscleVisual {
+      background-image: url("../../assets/circle.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50px;
+      background-size: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: calc(100% - 30px); }
+    .contentWrapper main .muscleVisual__container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%; }
+      .contentWrapper main .muscleVisual__container .muscleVisual__person {
+        display: flex;
+        flex-direction: column;
+        height: 100%; }
+      .contentWrapper main .muscleVisual__container svg {
+        max-height: 90vh; }
+    .contentWrapper main .muscleInfo__wrapper {
+      display: flex;
+      flex-direction: column; }
+
+section {
+  width: calc(50% - 30px);
+  margin: 15px; }
+
+h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.05rem;
+  margin-bottom: 6px;
+  font-weight: normal; }
+
+p {
+  font-size: 1rem;
+  font-family: "HKGrotesk-Regular"; }
 
 footer {
-  display: flex;
-  justify-content: flex-start;
-  width: calc(100vw - 64px);
-  height: 50px; }
-  footer .socials a {
-    text-decoration: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 8px; }
-    footer .socials a:first-child {
-      margin-left: 0; }
-    footer .socials a:hover {
-      border: 1px solid #292929; }
-  footer .socials i {
-    color: #292929;
-    font-size: 1.4rem; }
+  background-color: white;
+  padding: 15px;
+  text-align: right;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif; }
 
-.hidden {
-  display: none !important; }
+input {
+  color: #5698af;
+  border: none;
+  border-bottom: 2px solid lightgrey; }
+  input:focus {
+    outline: none;
+    border-bottom: 2px solid #5698af; }
 
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
+.heading {
+  text-align: center;
+  font-family: "HKGrotesk-Bold"; }
+
+.selectedLink {
+  color: #e4816b;
+  cursor: default; }
+
+.quiz__content {
+  display: none;
+  padding: 20px 0;
+  height: 100%; }
+
+#about__content {
+  display: none; }
+  #about__content h1 {
+    text-align: center; }
+
+.about__container {
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px 0px #ccc; }
+  .about__container li {
+    font-size: 1rem; }
+
+.muscleInfo p {
+  margin-top: 0; }
+
+.muscleInfo .muscleInfo__container {
+  background-color: white;
+  padding: 40px;
+  width: 100%;
+  min-height: 40vh;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
+
+.muscleInfo .muscleInfo__details {
+  list-style-type: none;
   padding: 0;
-  position: absolute;
-  width: 1px; }
+  line-height: 1.5;
+  color: #5698af;
+  font-size: 0.8rem;
+  text-transform: uppercase; }
+  .muscleInfo .muscleInfo__details .muscleInfo__import {
+    text-transform: none;
+    font-size: 1.2rem;
+    padding-bottom: 15px; }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto; }
+.quizForm {
+  display: none; }
+
+.mobileOnly {
+  display: none; }
+
+.desktopOnly {
+  display: default; }
+
+@media (max-width: 940px) {
+  .wrapper {
+    width: 90%; } }
+
+@media (max-width: 860px) {
+  nav ul li a {
+    font-size: 1rem; }
+  h1 {
+    font-size: 1.3rem; }
+  p {
+    font-size: 0.8rem; }
+  .about__container ul {
+    padding-left: 15px; }
+    .about__container ul li {
+      font-size: 0.8rem; }
+  .muscleInfo__container {
+    padding: 20px; }
+  .muscleInfo__details .muscleInfo__import {
+    font-size: 1rem;
+    padding-bottom: 8px; } }
+
+@media (max-width: 585px) {
+  nav {
+    padding: 0; }
+    nav ul {
+      margin-top: 10px; }
+      nav ul li {
+        padding: 10px 20px;
+        display: block; }
+        nav ul li a {
+          font-size: 1rem; }
+  .navLeft,
+  .navRight {
+    width: 30%; }
+  .logo {
+    padding: 10px 0;
+    width: 40%; }
+  #quizMenu li a {
+    font-size: 0.8rem; }
+  main {
+    padding: 10px 0;
+    height: 100%; }
+  #study__content {
+    display: flex; }
+  section {
+    width: calc(100% - 30px);
+    margin: 15px; }
+  .muscleVisual__container svg {
+    max-height: 60vh; }
+  .muscleInfo__container {
+    min-height: 100%;
+    padding: 6px 20px; }
+  .muscleVisual {
+    background-position: 50% 0;
+    background-size: 70%; }
+  .mobileOnly {
+    display: block; }
+  .desktopOnly {
+    display: none; } }
+
+.unclickable {
+  pointer-events: none; }
+
+.selectedMuscle {
+  fill: #6699CC; }
+
+#hoverMuscle {
+  fill: #8cb3d9; }

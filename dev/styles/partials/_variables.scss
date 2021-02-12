@@ -1,42 +1,20 @@
-$sml: ( max: 570px );
-$med: ( max: 680px );
-$lrg: ( max: 750px );
+$fontPrimary: 'Roboto', sans-serif;
+$fontSecondary: 'Dosis', sans-serif;
 
-$green: #316347;
-// $orange: #ed810c;
-// $pink: #f39d8c;
-// $red: #ef493d;
-$blue: #cce7ce;
-// $tan: #c9962b;
-$coral: #f16d68;
-$cream: #f6f0ea;
-$eggshell: #f3f1e2;
-$grey: #292929;
+$colorLight: #e9f7ff;
+$colorMedium: #5698af;
+$colorDark: #0e678e;
 
-// @font-face {
-//     font-family: "Eksell";
-//     src: url("../../../assets/fonts/EksellDisplay-Large.woff") format("woff"),
-//     url("../../../assets/fonts/EksellDisplay-Large.woff2") format("woff2");
-// }
-// $eksell: "Eksell";
+$colorSecondary: #e4816b;
 
 @font-face {
-    font-family: "Apercu";
-    src: url("../../../assets/fonts/apercu-light-pro.woff") format("woff"),
-    url("../../../assets/fonts/apercu-light-pro.woff2") format("woff2");
+    font-family: "HKGrotesk-Bold";
+    src: url("../../../assets/fonts/HKGrotesk-Bold.otf") format("opentype");
 }
-$apercu: "Apercu";
+$hk-bold: "HKGrotesk-Bold";
 
 @font-face {
-    font-family: "Canela";
-    src: url("../../../assets/fonts/Canela-Regular.woff") format("woff");
+    font-family: "HKGrotesk-Regular";
+    src: url("../../../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
 }
-$canela: "Canela";
-
-@font-face {
-    font-family: "GT Pressura Mono";
-    src: url("../../../assets/fonts/GT-Pressura-Mono.otf") format("opentype");
-}
-$pressura: "GT Pressura Mono";
-
-$bodyFont: 'Source Code Pro', monospace; // weights: 300, 400
+$hk-reg: "HKGrotesk-Regular";

@@ -1,37 +1,410 @@
 @import "partials/setup";
 @import "partials/variables";
-// @import "partials/mixins";
 
-@import "partials/header";
-@import "partials/content";
-@import "partials/footer";
-
-
-// hide visually and from screen readers
-.hidden {
-    display: none !important;
+// ELEMENTS
+svg, path, a, span {
+	transition: all 0.3s ease;
 }
 
-// hide visually, leave available for screen readers
-// via http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+body {
+	background-color: $colorLight;
+	font-family: $hk-reg;
+	color: $colorDark;
 }
 
-// extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: https://www.drupal.org/node/897638
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-   clip: auto;
-   height: auto;
-   margin: 0;
-   overflow: visible;
-   position: static;
-   width: auto;
+a {
+	color: #333333;
+	text-decoration: none;
+
+	&:hover {
+		color: $colorSecondary;
+	}
+}
+
+nav {
+	background-color: #fff;
+	box-shadow: 0 0 8px rgba(0,0,0,.1);
+	padding: 10px 0;
+	height: 100px;
+	font-family: $hk-bold;
+
+	.navContainer {
+		width: 70%;
+		height: 100%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+	}
+	
+	#svgLogo {
+		width: 130px;
+	}
+	
+	.navLeft {
+		width: 40%;
+		text-align: left;
+
+		#quizMenu {
+			list-style: none;
+			position: relative;
+		
+			ul {
+				display:none;
+				position: absolute;
+				top: 70%;
+				left: 25%;
+				background: #fff;
+				border-radius: 5px;
+				box-shadow: 0 2px 1px 0 #ccc;
+				margin:0;
+				padding:15px 0 0 0;
+			}
+		
+			li {
+				position: relative;
+				margin: 0;
+				padding: 0;
+		
+				a {
+					display: block;
+					padding: 8px;
+					margin: 0 0 0 6px;
+					font-size: 1rem;
+					font-family: $hk-reg;
+				}
+			}
+		
+			&:hover > ul {
+				display: block;
+			}
+		}		
+	}
+
+	.logo {
+		width: 20%;
+		text-align: center;
+	}
+	
+	.navRight {
+		width: 40%;
+		text-align: right;
+	}
+
+	ul {
+		padding: 0;
+		margin-top: 25px;
+		list-style-type: none;
+
+		li {
+			padding: 15%;
+			display: inline;
+
+			a {
+			text-decoration: none;
+			font-size: 1.2rem;
+			color: $colorDark;	
+
+				&:hover {
+					color: $colorSecondary;
+				}
+			}
+		}
+	}
+}
+
+.contentWrapper {
+    height: calc(100vh - 150px);
+    padding: 0 32px;
+
+    main {
+        display: flex;
+        height: 100%;
+
+        .muscleVisual {
+            background-image: url("../../assets/circle.png");
+            background-repeat: no-repeat;
+            background-position: 50% 50px;
+            background-size: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: calc(100% - 30px);
+        }
+        
+        .muscleVisual__container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .muscleVisual__person {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+        
+            svg {
+                max-height: 90vh;
+            }
+        }
+        
+        .muscleInfo__wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+
+section {
+	width: calc(50% - 30px);
+	margin: 15px;;
+}
+
+h1 {
+	font-size: 1.6rem;
+	letter-spacing: 0.05rem;
+	margin-bottom: 6px;
+	font-weight: normal;
+}
+
+p {
+	font-size: 1rem;
+	font-family: $hk-reg;
+}
+
+footer {
+	background-color: white;
+	padding: 15px;
+	text-align: right;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-family: $fontSecondary;
+}
+
+input {
+	color: $colorMedium;
+	border: none;
+	border-bottom: 2px solid lightgrey;
+
+	&:focus {
+		outline: none;
+		border-bottom: 2px solid $colorMedium;
+	}
+}
+
+
+// CLASSES and IDS
+
+
+
+.heading {
+	text-align: center;
+	font-family: $hk-bold;
+}
+
+.selectedLink {
+	color: $colorSecondary;
+	cursor: default;
+}
+
+.quiz__content {
+	display: none;
+	// display: flex;
+	padding: 20px 0;
+	height: 100%;
+}
+
+#about__content {
+	display: none;
+
+	h1 {
+		text-align: center;
+	}
+}
+
+.about__container {
+	background-color: #fff;
+	margin-top: 20px;
+	padding: 20px 40px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 1px 0px #ccc;
+	li {
+		font-size: 1rem;
+	}
+}
+
+
+.muscleInfo {
+
+	p {
+		margin-top: 0;
+	}
+
+	.muscleInfo__container {
+		background-color: white;
+		padding: 40px;
+		width: 100%;
+		min-height: 40vh;
+		border-radius: 10px;
+		// box-shadow: 2px 2px 1px 0px #ccc;
+		box-shadow: 0 0 8px rgba(0,0,0,.1);
+	}
+
+	.muscleInfo__details {
+		list-style-type: none;
+		padding: 0;
+		line-height: 1.5;
+		color: $colorMedium;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+	
+		.muscleInfo__import {
+			text-transform: none;
+			font-size: 1.2rem;
+			padding-bottom: 15px;
+		}
+	}
+
+
+}
+
+
+
+.quizForm {
+	display: none;
+}
+
+.mobileOnly {
+	display: none;
+}
+
+.desktopOnly {
+	display: default;
+}
+
+@media (max-width: 940px) {
+
+	.wrapper {
+		width: 90%;
+	}
+}
+
+@media (max-width: 860px) {
+
+	nav ul li a {
+		font-size: 1rem;
+	}
+
+	h1 {
+		font-size: 1.3rem;
+	}
+
+	p {
+		font-size: 0.8rem;
+	}
+
+	.about__container ul {
+		padding-left: 15px;
+
+		li {
+		font-size: 0.8rem;
+		}
+	}
+
+	.muscleInfo__container {
+		padding: 20px;
+	}
+
+	.muscleInfo__details {
+
+		.muscleInfo__import {
+			font-size: 1rem;
+			padding-bottom: 8px;
+		}
+	}
+}
+
+@media (max-width: 585px) {
+	nav {
+		padding: 0;
+
+		ul {
+			margin-top: 10px;
+
+			li {
+				padding: 10px 20px;
+				display: block;
+
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+
+	.navLeft, 
+	.navRight {
+		width: 30%;
+	}
+
+	.logo {
+		padding: 10px 0;
+		width: 40%;
+	}
+
+	#quizMenu li a {
+		font-size: 0.8rem;
+	}
+
+	main {
+		padding: 10px 0;
+		height: 100%;
+	}
+	
+	#study__content {
+		display: flex;
+	}
+
+	section {
+		width: calc(100% - 30px);
+		margin: 15px;
+	}
+
+	.muscleVisual__container {
+
+		svg {
+			max-height: 60vh;
+		}
+	}
+
+	.muscleInfo__container {
+		min-height: 100%;
+		padding: 6px 20px;
+	}
+
+	.muscleVisual {
+		background-position: 50% 0;
+		background-size: 70%;
+	}
+
+	.mobileOnly {
+		display: block;
+	}
+
+	.desktopOnly {
+		display: none;
+	}
+}
+
+.unclickable{
+	pointer-events: none;
+}
+
+.selectedMuscle {
+	fill: #6699CC;
+}
+
+#hoverMuscle {
+	fill: #8cb3d9;
 }
