@@ -108,10 +108,6 @@ var bodyMap = [{
 
 // document.ready function wraps content
 $(function () {
-	// selects the muscle pair
-	// let bilateral = $(this).data("name");
-	// let bilateralSelector = $(`path[data-name=${bilateral}]`);
-	//// TODO: pass as an argument into child functions?
 
 	// body click handler
 	$("path").on("click", function bodyClickHandler(oneMuscle, twoMuscle) {
@@ -130,7 +126,6 @@ $(function () {
 		});
 
 		// prints form results to screen
-		//// TODO: should I loop this???
 		var nameInfo = bodyMap.displayName;
 		$('span.name').text(matchedItem[0].displayName);
 		var originInfo = bodyMap.origin;
@@ -154,33 +149,33 @@ $(function () {
 			var userInputName = $("#name__userAnswer").val().toLowerCase();
 			var correctName = matchedItem[0].displayName.toLowerCase();
 			if (userInputName === correctName) {
-				$("span#nameFeedback").html("You're correct! The selected muscle is <font color=\"#5698af>" + correctName + "</font>.").css({ "color": "#19c452" });
+				$("span#nameFeedback").html("You're correct! The selected muscle is <font color=\"#5698af\">" + userInputName + "</font>.").css({ "color": "#19c452" });
 			} else {
-				$("span#nameFeedback").html("Sorry! The selected muscle is <font color=\"#5698af\">" + correctName + "</font>.").css({ 'color': '#f00' });
+				$("span#nameFeedback").html("Sorry! The selected muscle is <font color=\"#5698af\">" + correctName + "</font>.").css({ "color": "#f00" });
 			}
 			// origin quiz
-			var userInputOrigin = $('#origin__userAnswer').val().toLowerCase();
+			var userInputOrigin = $("#origin__userAnswer").val().toLowerCase();
 			var correctOrigin = matchedItem[0].origin.toLowerCase();
 			if (userInputOrigin === correctOrigin) {
-				$('span#originFeedback').html("You're correct! The origin of " + correctName + " is <font color=\"#5698af\">" + correctOrigin + "</font>.").css({ 'color': '#19c452' });
+				$("span#originFeedback").html("You're correct! The origin of " + correctName + " is <font color=\"#5698af\">" + correctOrigin + "</font>.").css({ "color": "#19c452" });
 			} else {
-				$('span#originFeedback').html("Sorry! The correct origin of " + correctName + " is <font color=\"#5698af\">" + correctOrigin + "</font>.").css({ 'color': '#f00' });
+				$("span#originFeedback").html("Sorry! The correct origin of " + correctName + " is <font color=\"#5698af\">" + correctOrigin + "</font>.").css({ "color": "#f00" });
 			}
 			// insertion quiz
-			var userInputInsertion = $('#insertion__userAnswer').val().toLowerCase();
+			var userInputInsertion = $("#insertion__userAnswer").val().toLowerCase();
 			var correctInsertion = matchedItem[0].insertion.toLowerCase();
 			if (userInputInsertion === correctInsertion) {
-				$('span#insertionFeedback').html("You're correct! The insertion of " + correctName + " is <font color=\"#5698af\">" + correctInsertion + "</font>.").css({ 'color': '#19c452' });
+				$("span#insertionFeedback").html("You're correct! The insertion of " + correctName + " is <font color=\"#5698af\">" + correctInsertion + "</font>.").css({ "color": "#19c452" });
 			} else {
-				$('span#insertionFeedback').html("Sorry! The correct insertion of " + correctName + " is <font color=\"#5698af\">" + correctInsertion + "</font>.").css({ 'color': '#f00' });
+				$("span#insertionFeedback").html("Sorry! The correct insertion of " + correctName + " is <font color=\"#5698af\">" + correctInsertion + "</font>.").css({ "color": "#f00" });
 			}
 			// innervation quiz
-			var userInputInnervation = $('#innervation__userAnswer').val().toLowerCase();
+			var userInputInnervation = $("#innervation__userAnswer").val().toLowerCase();
 			var correctNerve = matchedItem[0].innervation.toLowerCase();
 			if (userInputInnervation === correctNerve) {
-				$('span#innervationFeedback').html("You're correct! The innervation of " + correctName + " is <font color=\"#5698af\">" + correctNerve + "</font>.").css({ 'color': '#19c452' });
+				$("span#innervationFeedback").html("You're correct! The innervation of " + correctName + " is <font color=\"#5698af\">" + correctNerve + "</font>.").css({ "color": "#19c452" });
 			} else {
-				$('span#innervationFeedback').html("Sorry! The correct innervation of " + correctName + " is <font color=\"#5698af\">" + correctNerve + "</font>.").css({ 'color': '#f00' });
+				$("span#innervationFeedback").html("Sorry! The correct innervation of " + correctName + " is <font color=\"#5698af\">" + correctNerve + "</font>.").css({ "color": "#f00" });
 			}
 		});
 	});
@@ -198,8 +193,8 @@ $(function () {
 	});
 
 	// menu selection handlers and display of matching content
+	// same muscle stays selected in various modes
 	$("#study__link").on("click", function () {
-		$("path").attr("class", "");
 		// content
 		$("#about__content, #nameQuiz__content, #originQuiz__content, #insertionQuiz__content, #innervationQuiz__content").hide();
 		$("#study__content").fadeIn();
@@ -208,7 +203,6 @@ $(function () {
 		$("#study__link").addClass("selectedLink");
 	});
 	$("#about__link").on("click", function () {
-		$("path").attr("class", "");
 		// content
 		$("#nameQuiz__content, #originQuiz__content, #insertionQuiz__content, #innervationQuiz__content, #study__content").hide();
 		$("#about__content").fadeIn();
@@ -217,7 +211,6 @@ $(function () {
 		$("#about__link").addClass("selectedLink");
 	});
 	$("#nameQuiz__link").on("click", function () {
-		$("path").attr("class", "");
 		// content
 		$("#study__content, #about__content, #originQuiz__content, #insertionQuiz__content, #innervationQuiz__content").hide();
 		$("#nameQuiz__content").fadeIn();
@@ -226,7 +219,6 @@ $(function () {
 		$("#nameQuiz__link").addClass("selectedLink");
 	});
 	$("#originQuiz__link").on("click", function () {
-		$("path").attr("class", "");
 		// content
 		$("#study__content, #about__content, #nameQuiz__content, #insertionQuiz__content, #innervationQuiz__content").hide();
 		$("#originQuiz__content").fadeIn();
@@ -235,7 +227,6 @@ $(function () {
 		$("#originQuiz__link").addClass("selectedLink");
 	});
 	$("#insertionQuiz__link").on("click", function () {
-		$("path").attr("class", "");
 		// content
 		$("#study__content, #about__content, #nameQuiz__content, #originQuiz__content, #innervationQuiz__content").hide();
 		$("#insertionQuiz__content").fadeIn();
@@ -244,7 +235,6 @@ $(function () {
 		$("#insertionQuiz__link").addClass("selectedLink");
 	});
 	$("#innervationQuiz__link").on("click", function () {
-		$("path").attr("class", "");
 		// content
 		$("#study__content, #about__content, #nameQuiz__content, #originQuiz__content, #insertionQuiz__content").hide();
 		$("#innervationQuiz__content").fadeIn();

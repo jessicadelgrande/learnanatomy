@@ -1,7 +1,6 @@
 @import "partials/setup";
 @import "partials/variables";
 
-// ELEMENTS
 svg, path, a, span {
 	transition: all 0.3s ease;
 }
@@ -10,6 +9,11 @@ body {
 	background-color: $colorLight;
 	font-family: $hk-reg;
 	color: $colorDark;
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100vh;
 }
 
 a {
@@ -113,53 +117,117 @@ nav {
 }
 
 .contentWrapper {
-    height: calc(100vh - 150px);
-    padding: 0 32px;
-
+	// padding: 0 32px;
+	padding: 48px;
+	
     main {
-        display: flex;
+		display: flex;
+		flex-wrap: wrap;
         height: 100%;
+		// margin: 32px auto;
+
+		@media screen and (max-width: 1044px) {
+			flex-direction: column;
+		}
+		
+		section {
+			width: calc(50% - 30px);
+			margin: 15px;
+
+			@media screen and (max-width: 1044px) {
+				width: 80%;
+			}
+		}
 
         .muscleVisual {
             background-image: url("../../assets/circle.png");
             background-repeat: no-repeat;
             background-position: 50% 50px;
-            background-size: 80%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: calc(100% - 30px);
+			min-width: 500px;
+			margin: 0 auto;
         }
         
         .muscleVisual__container {
             text-align: center;
             display: flex;
             flex-direction: column;
-            height: 100%;
 
             .muscleVisual__person {
                 display: flex;
                 flex-direction: column;
-                height: 100%;
             }
         
             svg {
                 max-height: 90vh;
             }
         }
-        
-        .muscleInfo__wrapper {
-            display: flex;
-            flex-direction: column;
-        }
+
+		.muscleInfo {
+			margin: 0 auto;
+
+			@media screen and (max-width: 1044px) {
+				margin: 32px auto;
+			}
+
+			.muscleInfo__wrapper {
+				display: flex;
+				flex-direction: column;
+			}
+	
+			
+			p {
+				margin-top: 0;
+			}
+			
+			.muscleInfo__container {
+				background-color: white;
+				padding: 40px;
+				width: 100%;
+				min-height: 40vh;
+				border-radius: 10px;
+				box-shadow: 0 0 8px rgba(0,0,0,.1);
+			}
+			
+			.muscleInfo__details {
+				list-style-type: none;
+				padding: 0;
+				line-height: 1.5;
+				color: $colorDark;
+				font-size: 0.8rem;
+				text-transform: uppercase;
+
+				li {
+					font-size: 1rem;
+					font-weight: 600;
+				}
+			
+				.muscleInfo__import {
+					text-transform: none;
+					font-size: 1.2rem;
+					font-weight: 500;
+					padding-bottom: 16px;
+				}
+			}
+		}
     }
 }
 
-
-section {
-	width: calc(50% - 30px);
-	margin: 15px;;
+footer {
+	background-color: white;
+	padding: 15px;
+	text-align: right;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-family: $hk-reg;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
+
 
 h1 {
 	font-size: 1.6rem;
@@ -173,14 +241,6 @@ p {
 	font-family: $hk-reg;
 }
 
-footer {
-	background-color: white;
-	padding: 15px;
-	text-align: right;
-	font-size: 1rem;
-	text-transform: uppercase;
-	font-family: $fontSecondary;
-}
 
 input {
 	color: $colorMedium;
@@ -197,7 +257,6 @@ input {
 // CLASSES and IDS
 
 
-
 .heading {
 	text-align: center;
 	font-family: $hk-bold;
@@ -212,7 +271,7 @@ input {
 	display: none;
 	// display: flex;
 	padding: 20px 0;
-	height: 100%;
+	// height: 100%;
 }
 
 #about__content {
@@ -229,50 +288,23 @@ input {
 	padding: 20px 40px;
 	border-radius: 10px;
 	box-shadow: 2px 2px 1px 0px #ccc;
+
 	li {
 		font-size: 1rem;
 	}
 }
 
 
-.muscleInfo {
 
-	p {
-		margin-top: 0;
-	}
-
-	.muscleInfo__container {
-		background-color: white;
-		padding: 40px;
-		width: 100%;
-		min-height: 40vh;
-		border-radius: 10px;
-		// box-shadow: 2px 2px 1px 0px #ccc;
-		box-shadow: 0 0 8px rgba(0,0,0,.1);
-	}
-
-	.muscleInfo__details {
-		list-style-type: none;
-		padding: 0;
-		line-height: 1.5;
-		color: $colorMedium;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-	
-		.muscleInfo__import {
-			text-transform: none;
-			font-size: 1.2rem;
-			padding-bottom: 15px;
-		}
-	}
-
-
-}
 
 
 
 .quizForm {
 	display: none;
+
+	.quizInput {
+		width: 100%;
+	}
 }
 
 .mobileOnly {
@@ -283,119 +315,119 @@ input {
 	display: default;
 }
 
-@media (max-width: 940px) {
+// @media (max-width: 940px) {
 
-	.wrapper {
-		width: 90%;
-	}
-}
+// 	.wrapper {
+// 		width: 90%;
+// 	}
+// }
 
-@media (max-width: 860px) {
+// @media (max-width: 860px) {
 
-	nav ul li a {
-		font-size: 1rem;
-	}
+// 	nav ul li a {
+// 		font-size: 1rem;
+// 	}
 
-	h1 {
-		font-size: 1.3rem;
-	}
+// 	h1 {
+// 		font-size: 1.3rem;
+// 	}
 
-	p {
-		font-size: 0.8rem;
-	}
+// 	p {
+// 		font-size: 0.8rem;
+// 	}
 
-	.about__container ul {
-		padding-left: 15px;
+// 	.about__container ul {
+// 		padding-left: 15px;
 
-		li {
-		font-size: 0.8rem;
-		}
-	}
+// 		li {
+// 		font-size: 0.8rem;
+// 		}
+// 	}
 
-	.muscleInfo__container {
-		padding: 20px;
-	}
+// 	.muscleInfo__container {
+// 		padding: 20px;
+// 	}
 
-	.muscleInfo__details {
+// 	.muscleInfo__details {
 
-		.muscleInfo__import {
-			font-size: 1rem;
-			padding-bottom: 8px;
-		}
-	}
-}
+// 		.muscleInfo__import {
+// 			font-size: 1rem;
+// 			padding-bottom: 8px;
+// 		}
+// 	}
+// }
 
-@media (max-width: 585px) {
-	nav {
-		padding: 0;
+// @media (max-width: 585px) {
+// 	nav {
+// 		padding: 0;
 
-		ul {
-			margin-top: 10px;
+// 		ul {
+// 			margin-top: 10px;
 
-			li {
-				padding: 10px 20px;
-				display: block;
+// 			li {
+// 				padding: 10px 20px;
+// 				display: block;
 
-				a {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
+// 				a {
+// 					font-size: 1rem;
+// 				}
+// 			}
+// 		}
+// 	}
 
-	.navLeft, 
-	.navRight {
-		width: 30%;
-	}
+// 	.navLeft, 
+// 	.navRight {
+// 		width: 30%;
+// 	}
 
-	.logo {
-		padding: 10px 0;
-		width: 40%;
-	}
+// 	.logo {
+// 		padding: 10px 0;
+// 		width: 40%;
+// 	}
 
-	#quizMenu li a {
-		font-size: 0.8rem;
-	}
+// 	#quizMenu li a {
+// 		font-size: 0.8rem;
+// 	}
 
-	main {
-		padding: 10px 0;
-		height: 100%;
-	}
+// 	main {
+// 		padding: 10px 0;
+// 		height: 100%;
+// 	}
 	
-	#study__content {
-		display: flex;
-	}
+// 	#study__content {
+// 		display: flex;
+// 	}
 
-	section {
-		width: calc(100% - 30px);
-		margin: 15px;
-	}
+// 	section {
+// 		width: calc(100% - 30px);
+// 		margin: 15px;
+// 	}
 
-	.muscleVisual__container {
+// 	.muscleVisual__container {
 
-		svg {
-			max-height: 60vh;
-		}
-	}
+// 		svg {
+// 			max-height: 60vh;
+// 		}
+// 	}
 
-	.muscleInfo__container {
-		min-height: 100%;
-		padding: 6px 20px;
-	}
+// 	.muscleInfo__container {
+// 		min-height: 100%;
+// 		padding: 6px 20px;
+// 	}
 
-	.muscleVisual {
-		background-position: 50% 0;
-		background-size: 70%;
-	}
+// 	.muscleVisual {
+// 		background-position: 50% 0;
+// 		background-size: 70%;
+// 	}
 
-	.mobileOnly {
-		display: block;
-	}
+// 	.mobileOnly {
+// 		display: block;
+// 	}
 
-	.desktopOnly {
-		display: none;
-	}
-}
+// 	.desktopOnly {
+// 		display: none;
+// 	}
+// }
 
 .unclickable{
 	pointer-events: none;
