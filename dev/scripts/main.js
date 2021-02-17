@@ -208,7 +208,7 @@ $(() => {
 	});
 
 	// menu selection handlers and display of matching content
-	// same muscle stays selected in various modes
+	// same muscle stays selected in various modes for continuity
 	$("#study__link").on("click", function() {
 		// content
 		$("#about__content, #nameQuiz__content, #originQuiz__content, #insertionQuiz__content, #innervationQuiz__content").hide();
@@ -218,6 +218,7 @@ $(() => {
 		$("#study__link").addClass("selectedLink");
 	});
 	$("#about__link").on("click", function() {
+		$("path").attr("class", "");
 		// content
 		$("#nameQuiz__content, #originQuiz__content, #insertionQuiz__content, #innervationQuiz__content, #study__content").hide();
 		$("#about__content").fadeIn();
@@ -258,8 +259,9 @@ $(() => {
 		$("#innervationQuiz__link").addClass("selectedLink");
 	});
 
-	// clicking on new quiz in menu clears existing text input
-	$("#nameQuiz__link, #originQuiz__link, #insertionQuiz__link, #innervationQuiz__link").on("click", () => {
-		$("#nameFeedback, #originFeedback, #insertionFeedback, #innervationFeedback").text("")
+	// clicking on new quiz in menu clears existing text input and result message
+	$("#nameQuiz__link, #originQuiz__link, #insertionQuiz__link, #innervationQuiz__link, #study__link, #about__link").on("click", () => {
+		$("#nameFeedback, #originFeedback, #insertionFeedback, #innervationFeedback").text("");
+		$("#name__userAnswer, #origin__userAnswer, #insertion__userAnswer, #innervation__userAnswer").val("");
 	});
 });

@@ -44,6 +44,11 @@ nav {
 		width: 130px;
 	}
 	
+	.selectedLink {
+		color: $colorSecondary;
+		cursor: default;
+	}
+
 	.navLeft {
 		width: 40%;
 		text-align: left;
@@ -228,7 +233,6 @@ footer {
 	left: 0;
 }
 
-
 h1 {
 	font-size: 1.6rem;
 	letter-spacing: 0.05rem;
@@ -241,7 +245,6 @@ p {
 	font-family: $hk-reg;
 }
 
-
 input {
 	color: $colorMedium;
 	border: none;
@@ -253,19 +256,12 @@ input {
 	}
 }
 
-
-// CLASSES and IDS
-
-
 .heading {
 	text-align: center;
 	font-family: $hk-bold;
 }
 
-.selectedLink {
-	color: $colorSecondary;
-	cursor: default;
-}
+
 
 .quiz__content {
 	display: none;
@@ -295,10 +291,6 @@ input {
 }
 
 
-
-
-
-
 .quizForm {
 	display: none;
 
@@ -307,129 +299,7 @@ input {
 	}
 }
 
-.mobileOnly {
-	display: none;
-}
-
-.desktopOnly {
-	display: default;
-}
-
-// @media (max-width: 940px) {
-
-// 	.wrapper {
-// 		width: 90%;
-// 	}
-// }
-
-// @media (max-width: 860px) {
-
-// 	nav ul li a {
-// 		font-size: 1rem;
-// 	}
-
-// 	h1 {
-// 		font-size: 1.3rem;
-// 	}
-
-// 	p {
-// 		font-size: 0.8rem;
-// 	}
-
-// 	.about__container ul {
-// 		padding-left: 15px;
-
-// 		li {
-// 		font-size: 0.8rem;
-// 		}
-// 	}
-
-// 	.muscleInfo__container {
-// 		padding: 20px;
-// 	}
-
-// 	.muscleInfo__details {
-
-// 		.muscleInfo__import {
-// 			font-size: 1rem;
-// 			padding-bottom: 8px;
-// 		}
-// 	}
-// }
-
-// @media (max-width: 585px) {
-// 	nav {
-// 		padding: 0;
-
-// 		ul {
-// 			margin-top: 10px;
-
-// 			li {
-// 				padding: 10px 20px;
-// 				display: block;
-
-// 				a {
-// 					font-size: 1rem;
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	.navLeft, 
-// 	.navRight {
-// 		width: 30%;
-// 	}
-
-// 	.logo {
-// 		padding: 10px 0;
-// 		width: 40%;
-// 	}
-
-// 	#quizMenu li a {
-// 		font-size: 0.8rem;
-// 	}
-
-// 	main {
-// 		padding: 10px 0;
-// 		height: 100%;
-// 	}
-	
-// 	#study__content {
-// 		display: flex;
-// 	}
-
-// 	section {
-// 		width: calc(100% - 30px);
-// 		margin: 15px;
-// 	}
-
-// 	.muscleVisual__container {
-
-// 		svg {
-// 			max-height: 60vh;
-// 		}
-// 	}
-
-// 	.muscleInfo__container {
-// 		min-height: 100%;
-// 		padding: 6px 20px;
-// 	}
-
-// 	.muscleVisual {
-// 		background-position: 50% 0;
-// 		background-size: 70%;
-// 	}
-
-// 	.mobileOnly {
-// 		display: block;
-// 	}
-
-// 	.desktopOnly {
-// 		display: none;
-// 	}
-// }
-
-.unclickable{
+.unclickable {
 	pointer-events: none;
 }
 
