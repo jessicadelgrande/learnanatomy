@@ -134,11 +134,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 @font-face {
   font-family: "HKGrotesk-Bold";
-  src: url("../../../assets/fonts/HKGrotesk-Bold.otf") format("opentype"); }
+  src: url("../../assets/HKGrotesk-Bold.otf") format("opentype"); }
 
 @font-face {
   font-family: "HKGrotesk-Regular";
-  src: url("../../../assets/fonts/HKGrotesk-Regular.otf") format("opentype"); }
+  src: url("../../assets/HKGrotesk-Regular.otf") format("opentype"); }
 
 svg, path, a, span {
   transition: all 0.3s ease; }

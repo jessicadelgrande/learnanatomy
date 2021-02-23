@@ -1,8 +1,0 @@
-+ lodash.template@4.5.0
-added 2 packages from 5 contributors, updated 2 packages and audited 1300 packages in 4.892s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 89 vulnerabilities (41 low, 25 moderate, 23 high)
-  run `npm audit fix` to fix them, or `npm audit` for details
